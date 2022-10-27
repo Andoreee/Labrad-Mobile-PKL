@@ -1,0 +1,4 @@
+#Thu Oct 27 21:22:57 ICT 2022
+base.0=D\:\\CODING\\flutter\\Labrad-Mobile-PKL\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

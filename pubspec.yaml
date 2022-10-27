@@ -61,7 +61,57 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/
+    - assets/images/main/akses.png
+    - assets/images/main/data master.png
+    - assets/images/main/lab.png
+    - assets/images/main/panduan.png
+    - assets/images/main/radiologi.png
+    - assets/images/menu/akses/Database.png
+    - assets/images/menu/akses/Ganti Password.png
+    - assets/images/menu/akses/Keluar.png
+    - assets/images/menu/akses/Level Pengguna.png
+    - assets/images/menu/akses/Login_.png
+    - assets/images/menu/akses/Login.png
+    - assets/images/menu/akses/Logout.png
+    - assets/images/menu/akses/Pengguna.png
+    - assets/images/menu/akses/Program.png
+    - assets/images/menu/data/Jabatan.png
+    - assets/images/menu/data/Karyawan.png
+    - assets/images/menu/ekg/data pemeriksaan.png
+    - assets/images/menu/ekg/film.png
+    - assets/images/menu/ekg/group.png
+    - assets/images/menu/ekg/item test.png
+    - assets/images/menu/ekg/pemeriksaan pasien.png
+    - assets/images/menu/ekg/sub group.png
+    - assets/images/menu/lab/data item test.png
+    - assets/images/menu/lab/data pemeriksaan.png
+    - assets/images/menu/lab/group.png
+    - assets/images/menu/lab/laporan laboratorium.png
+    - assets/images/menu/lab/pemeriksaan pasien.png
+    - assets/images/menu/lab/sub group.png
+    - assets/images/menu/panduan/tentang program.png
+    - assets/images/menu/radiologi/data pemeriksaan.png
+    - assets/images/menu/radiologi/film.png
+    - assets/images/menu/radiologi/group.png
+    - assets/images/menu/radiologi/item test.png
+    - assets/images/menu/radiologi/laporan radiologi.png
+    - assets/images/menu/radiologi/pemeriksaan pasien.png
+    - assets/images/others/backup data.png
+    - assets/images/others/cancel.png
+    - assets/images/others/date_1.png
+    - assets/images/others/date_2.png
+    - assets/images/others/date_3.png
+    - assets/images/others/filter.png
+    - assets/images/others/hapus logo.png
+    - assets/images/others/hapus.png
+    - assets/images/others/ok.png
+    - assets/images/others/pratinjau.png
+    - assets/images/others/refresh.png
+    - assets/images/others/restore data.png
+    - assets/images/others/simpan.png
+    - assets/images/others/tambah.png
+    - assets/images/others/test koneksi.png
+    - assets/images/others/ubah.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

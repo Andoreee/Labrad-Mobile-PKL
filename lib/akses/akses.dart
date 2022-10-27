@@ -4,7 +4,7 @@ import '../nav_drawer.dart';
 class Akses extends StatelessWidget {
   Akses({super.key});
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-
+  static const String routeName = "/";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

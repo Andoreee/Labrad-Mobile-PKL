@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:labrad_pkl2022/akses/akses.dart';
 import 'package:labrad_pkl2022/ekg/ekg.dart';
-import 'akses/akses.dart';
+import 'package:labrad_pkl2022/laboratorium/laboratorium.dart';
+import 'package:labrad_pkl2022/panduan/panduan.dart';
+import 'package:labrad_pkl2022/radiologi/radiologi.dart';
+import 'package:labrad_pkl2022/setup/setup.dart';
 
 class DrawerWidged extends StatelessWidget {
   const DrawerWidged({super.key});
@@ -26,41 +30,43 @@ class DrawerWidged extends StatelessWidget {
             text: "Akses Pengguna",
             icon: "assets/images/main/akses.png",
             onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Akses()
-                    ),
-                  );
+                  Navigator.pushReplacementNamed(context, Akses.routeName);
                 },
           ),
           _drawerItem(
             text: "Setup Data",
-            icon: "assets/images/main/data master.png"
+            icon: "assets/images/main/data master.png",
+            onTap: () {
+                  Navigator.pushReplacementNamed(context, Setup.routeName);
+                },
           ),
           _drawerItem(
             text: "Laboratorium",
-            icon: "assets/images/main/lab.png"
+            icon: "assets/images/main/lab.png",
+            onTap: () {
+                  Navigator.pushReplacementNamed(context, Laboratorium.routeName);
+                },
           ),
           _drawerItem(
             text: "Radiologi",
-            icon: "assets/images/main/radiologi.png"
+            icon: "assets/images/main/radiologi.png",
+            onTap: () {
+                  Navigator.pushReplacementNamed(context, Radiologi.routeName);
+                },
           ),
           _drawerItem(
             text: "Elektrokardigram",
             icon: "assets/images/main/lab.png",
             onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Ekg()
-                    ),
-                  );
+                  Navigator.pushReplacementNamed(context, Ekg.routeName);
                 },
           ),
           _drawerItem(
             text: "Panduan",
-            icon: "assets/images/main/panduan.png"
+            icon: "assets/images/main/panduan.png",
+            onTap: () {
+                  Navigator.pushReplacementNamed(context, Panduan.routeName);
+                },
           ),
         ],
       ),

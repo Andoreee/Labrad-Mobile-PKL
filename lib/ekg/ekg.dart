@@ -4,7 +4,7 @@ import '../nav_drawer.dart';
 class Ekg extends StatelessWidget {
   Ekg({super.key});
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-
+  static const String routeName = "/ekg";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -189,7 +189,7 @@ class Ekg extends StatelessWidget {
                   height: 90,
                   decoration: const BoxDecoration(
                         image : DecorationImage(
-                        image: AssetImage('assets/images/menu/ekg/data item test.png'),
+                        image: AssetImage('assets/images/menu/ekg/item test.png'),
                         fit: BoxFit.fitWidth
                 ),
             )
