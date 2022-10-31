@@ -84,7 +84,7 @@ class Akses extends StatelessWidget {
                   decoration: const BoxDecoration(
                     image : DecorationImage(
                     image: AssetImage('assets/images/menu/akses/Login.png'),
-                    fit: BoxFit.fitWidth
+                    fit: BoxFit.fitHeight
                 ),
             )
                 )
@@ -137,7 +137,7 @@ class Akses extends StatelessWidget {
                   decoration: const BoxDecoration(
                     image : DecorationImage(
                     image: AssetImage('assets/images/menu/akses/Logout.png'),
-                    fit: BoxFit.fitWidth
+                    fit: BoxFit.fitHeight
                 ),
             )
                 )

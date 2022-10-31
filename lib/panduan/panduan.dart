@@ -27,7 +27,6 @@ class Panduan extends StatelessWidget {
               SizedBox(
                 width: 363,
                 height: 191,
-                
                 child: Stack(
                   children: <Widget>[
                     Positioned(
@@ -53,11 +52,10 @@ class Panduan extends StatelessWidget {
                 )
                 ),Positioned(
                   top: 34,
-                  left: 16,
+                  left: 102,
                   child: SizedBox(
                 width: 160,
                 height: 135,
-                
                 child: Stack(
                   children: <Widget>[
                     Positioned(
@@ -84,68 +82,16 @@ class Panduan extends StatelessWidget {
                   height: 90,
                   decoration: const BoxDecoration(
                     image : DecorationImage(
-                    image: AssetImage('assets/images/menu/ekg/pemeriksaan pasien.png'),
-                    fit: BoxFit.fitWidth
+                    image: AssetImage('assets/images/menu/panduan/tentang program.png'),
+                    fit: BoxFit.fitHeight
                 ),
             )
                 )
                 ),const Positioned(
+                  width: 800,
                   top: 107,
-                  left: 5,
-                  child: Text('Pemerisaan Pasien', textAlign: TextAlign.left, style: TextStyle(
-                  color: Color.fromRGBO(0, 0, 0, 1),
-                  fontFamily: 'IM FELL English',
-                  fontSize: 20,
-                  letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
-                  fontWeight: FontWeight.normal,
-                  height: 1
-                ),)
-                ),
-                  ]
-                )
-              )
-                ),Positioned(
-                  top: 34,
-                  left: 188,
-                  child: SizedBox(
-                width: 160,
-                height: 135,
-                
-                child: Stack(
-                  children: <Widget>[
-                    Positioned(
-                  top: 0,
                   left: 0,
-                  child: Container(
-                  width: 160,
-                  height: 135,
-                  decoration: const BoxDecoration(
-                    borderRadius : BorderRadius.only(
-                      topLeft: Radius.circular(8),
-                      topRight: Radius.circular(8),
-                      bottomLeft: Radius.circular(8),
-                      bottomRight: Radius.circular(8),
-                    ),
-                color : Color.fromRGBO(225, 236, 247, 1),
-            )
-                )
-                ),Positioned(
-                  top: 17,
-                  left: 35,
-                  child: Container(
-                  width: 90,
-                  height: 90,
-                  decoration: const BoxDecoration(
-                    image : DecorationImage(
-                    image: AssetImage('assets/images/menu/ekg/data pemeriksaan.png'),
-                    fit: BoxFit.fitWidth
-                ),
-            )
-                )
-                ),const Positioned(
-                  top: 107,
-                  left: 6,
-                  child: Text('Data Pemeriksaan', textAlign: TextAlign.left, style: TextStyle(
+                  child: Text('Tentang Program', textAlign: TextAlign.left, style: TextStyle(
                   color: Color.fromRGBO(0, 0, 0, 1),
                   fontFamily: 'IM FELL English',
                   fontSize: 20,
@@ -175,7 +121,7 @@ class Panduan extends StatelessWidget {
                 ),const Positioned(
                   top: 1,
                   left: 6,
-                  child: Text('Pemeriksaan Elektrokardiogram', textAlign: TextAlign.left, style: TextStyle(
+                  child: Text('Panduan Aplikasi', textAlign: TextAlign.left, style: TextStyle(
                   color: Color.fromRGBO(0, 0, 0, 1),
                   fontFamily: 'IM FELL English',
                   fontSize: 15,
@@ -186,7 +132,7 @@ class Panduan extends StatelessWidget {
                 ),
                   ]
                 )
-              ),
+              )
             ],
           ),
         )],
