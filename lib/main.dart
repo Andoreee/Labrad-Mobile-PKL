@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:labrad_pkl2022/ekg/group/index.dart';
 import 'package:labrad_pkl2022/laboratorium/laboratorium.dart';
 import 'package:labrad_pkl2022/panduan/panduan.dart';
 import 'package:labrad_pkl2022/radiologi/radiologi.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         Akses.routeName :(context) => Akses(),
         Ekg.routeName :(context) => Ekg(),
+          GroupEkg.routeName :(context) => GroupEkg(),
         Setup.routeName :(context) => Setup(),
         Laboratorium.routeName :(context) => Laboratorium(),
         Radiologi.routeName :(context) => Radiologi(),
