@@ -8,7 +8,7 @@ class GroupEkg extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 151, 185, 3),
+      backgroundColor: const Color.fromARGB(255, 240, 240, 240),
       key: _scaffoldKey,
       appBar: AppBar(
         title: const Text('Elektrokardiagram',),
@@ -21,51 +21,66 @@ class GroupEkg extends StatelessWidget {
       ),
       drawer: const DrawerWidged(),
       body: Container(
-    width: 375,
-    height: 47,
-    child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children:[
+        child: Column(
+          children: [
             Container(
-                width: 375,
-                height: 47,
-                color: Color(0xff97b903),
-                padding: const EdgeInsets.only(left: 11, right: 134, ),
-                child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children:[
-                        Container(
-                            width: 28,
-                            height: 23,
-                            decoration: const BoxDecoration(
-                                    image : DecorationImage(
-                                      image: AssetImage('assets/images/menu/ekg/group.png'),
-                                      fit: BoxFit.fitWidth
-                                    ),
-                                  )
+              width: MediaQuery.of(context).size.width,
+              height: 50,
+              color: const Color.fromARGB(255, 151, 185, 3),
+              child: Row(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.only(right: 7, left: 15),
+                    width: 28,
+                    height: 23,
+                    decoration: const BoxDecoration(
+                      image : DecorationImage(
+                        image: AssetImage('assets/images/menu/ekg/group.png'),
+                        fit: BoxFit.fitWidth
+                      ),
+                    )
+                  ),
+                  const SizedBox(
+                    width: 195,
+                    height: 17,
+                    child: Text(
+                        "Elektrokardiagram - Group",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500
                         ),
-                        SizedBox(width: 7),
-                        SizedBox(
-                            width: 195,
-                            height: 17,
-                            child: Text(
-                                "Elektrokardiagram - Group",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                ),
-                            ),
-                        ),
-                    ],
-                ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-        ],
-    ),
-)
+            Container(
+              margin: const EdgeInsets.only(left: 15),
+              width: MediaQuery.of(context).size.width,
+              height: 45,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: const [
+                  Text(
+                    "Pencarian", 
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 128, 0, 0),
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              width: (MediaQuery.of(context).size.width - 30),
+              height: (MediaQuery.of(context).size.height - (91 + 15) - 60),
+              color: Colors.white,
+            ),
+          ],
+        ),
+      )
     );
   }
 }
