@@ -50,7 +50,7 @@ class GroupEkg extends StatelessWidget {
                       child: Text(
                         "Elektrokardiagram - Group",
                         style: TextStyle(
-                            color: Colors.blue,
+                            color: Colors.black,
                             fontSize: 15,
                             fontWeight: FontWeight.w500),
                       ),
@@ -65,31 +65,98 @@ class GroupEkg extends StatelessWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       "Pencarian",
                       style: TextStyle(
                           color: Color.fromARGB(255, 128, 0, 0),
                           fontWeight: FontWeight.bold),
                     ),
                     Container(
-                      margin: EdgeInsets.symmetric(horizontal: 15),
-                      width: MediaQuery.of(context).size.width - 200,
+                      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                      width: MediaQuery.of(context).size.width - 225,
                       color: Colors.white,
-                      child: Expanded(
-                        child: TextField(),
+                      child: const Expanded(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.zero,
+                            )
+                          ),
+                        ),
                       ),
-                    )
+                    ),
+                    Container(
+                      width: 100,
+                      margin: const EdgeInsets.symmetric(vertical: 7),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black)
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.all(5),
+                            width: 20,
+                            height: 20,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/images/others/refresh.png'),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 2),
+                          const SizedBox(
+                            child: Text(
+                              "Refresh",
+                              style: TextStyle(
+                                  color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
               Container(
-                alignment: Alignment.center,
                 width: (MediaQuery.of(context).size.width - 30),
                 height: (MediaQuery.of(context).size.height - (91 + 15) - 60),
                 color: Colors.white,
+                child: DataTable(
+                  columns: const [
+                    DataColumn(label: Text(
+                      'Group'
+                    ))
+                  ], 
+                  rows: const [
+                    DataRow(cells: [
+                      DataCell(Text('test'))
+                    ]),
+                    DataRow(cells: [
+                      DataCell(Text('test1'))
+                    ]),
+                  ]
+                )
               ),
             ],
           ),
-        ));
+        ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Color.fromARGB(255, 151, 185, 3),
+          onPressed: () {
+            showModalBottomSheet(context: context, 
+              builder: (context) {
+                return Container(
+                  
+                );
+              } 
+            );
+          },
+          child: Icon(
+            Icons.add,
+            size: 30,
+          ),
+        ),
+      );
   }
 }
