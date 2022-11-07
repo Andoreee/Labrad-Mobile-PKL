@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:labrad_pkl2022/ekg/group/index.dart';
 import 'package:labrad_pkl2022/laboratorium/laboratorium.dart';
 import 'package:labrad_pkl2022/panduan/panduan.dart';
+import 'package:labrad_pkl2022/radiologi/group/index.dart';
 import 'package:labrad_pkl2022/radiologi/radiologi.dart';
 import 'package:labrad_pkl2022/ekg/ekg.dart';
 import 'package:labrad_pkl2022/akses/akses.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         Setup.routeName :(context) => Setup(),
         Laboratorium.routeName :(context) => Laboratorium(),
         Radiologi.routeName :(context) => Radiologi(),
+          GroupRadiologi.routeName :(context) => GroupRadiologi(),
         Panduan.routeName :(context) => Panduan(),
       },
     );
