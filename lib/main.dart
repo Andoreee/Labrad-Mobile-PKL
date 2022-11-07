@@ -3,10 +3,10 @@ import 'package:labrad_pkl2022/ekg/group/index.dart';
 import 'package:labrad_pkl2022/laboratorium/laboratorium.dart';
 import 'package:labrad_pkl2022/panduan/panduan.dart';
 import 'package:labrad_pkl2022/radiologi/radiologi.dart';
-import 'ekg/ekg.dart';
-import 'akses/akses.dart';
-import 'setup/setup.dart';
-void main() => runApp(MyApp());
+import 'package:labrad_pkl2022/ekg/ekg.dart';
+import 'package:labrad_pkl2022/akses/akses.dart';
+import 'package:labrad_pkl2022/setup/setup.dart';
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

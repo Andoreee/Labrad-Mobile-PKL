@@ -65,7 +65,7 @@ class Ekg extends StatelessWidget {
                                   left: 0,
                                   child: InkWell(
                                       onTap: () {
-                                        Navigator.pushReplacementNamed(
+                                        Navigator.pushNamed(
                                             context, GroupEkg.routeName);
                                       },
                                       child: Container(
@@ -87,7 +87,7 @@ class Ekg extends StatelessWidget {
                                   left: 35,
                                   child: InkWell(
                                       onTap: () {
-                                        Navigator.pushReplacementNamed(
+                                        Navigator.pushNamed(
                                             context, GroupEkg.routeName);
                                       },
                                       child: Container(
@@ -105,7 +105,7 @@ class Ekg extends StatelessWidget {
                                   left: 50,
                                   child: InkWell(
                                       onTap: () {
-                                        Navigator.pushReplacementNamed(
+                                        Navigator.pushNamed(
                                             context, GroupEkg.routeName);
                                       },
                                       child: const Text(

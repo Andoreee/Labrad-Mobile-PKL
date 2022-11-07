@@ -1,6 +1,5 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
+import 'package:labrad_pkl2022/ekg/ekg.dart';
 import '../../nav_drawer.dart';
 
 class GroupEkg extends StatelessWidget {
@@ -11,6 +10,7 @@ class GroupEkg extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: const Color.fromARGB(255, 240, 240, 240),
         key: _scaffoldKey,
         appBar: AppBar(
@@ -55,6 +55,22 @@ class GroupEkg extends StatelessWidget {
                             fontWeight: FontWeight.w500),
                       ),
                     ),
+                    SizedBox(width: MediaQuery.of(context).size.width - 295,),
+                    InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Container(
+                        alignment: Alignment.center,
+                        width: 50,
+                        height: 50,
+                        color: Colors.red[800],
+                        child: new Icon(
+                          Icons.arrow_forward_rounded,
+                          color: Colors.white,
+                          ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -120,39 +136,114 @@ class GroupEkg extends StatelessWidget {
               ),
               Container(
                 width: (MediaQuery.of(context).size.width - 30),
-                height: (MediaQuery.of(context).size.height - (91 + 15) - 60),
+                height: (MediaQuery.of(context).size.height - (91 + 15) - 89),
                 color: Colors.white,
-                child: DataTable(
-                  columns: const [
-                    DataColumn(label: Text(
-                      'Group'
-                    ))
-                  ], 
-                  rows: const [
-                    DataRow(cells: [
-                      DataCell(Text('test'))
-                    ]),
-                    DataRow(cells: [
-                      DataCell(Text('test1'))
-                    ]),
-                  ]
+                child: ListView(
+                  children: [ DataTable(
+                    columns: const [
+                      DataColumn(label: Text(
+                        'Group'
+                      ))
+                    ], 
+                    rows: const [
+                      DataRow(cells: [
+                        DataCell(Text('test'))
+                      ]),
+                      DataRow(cells: [
+                        DataCell(Text('test1'))
+                      ]),
+                      DataRow(cells: [
+                        DataCell(Text('test1'))
+                      ]),
+                    ]
+                  )]
                 )
               ),
             ],
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Color.fromARGB(255, 151, 185, 3),
+          backgroundColor: const Color.fromARGB(255, 151, 185, 3),
           onPressed: () {
-            showModalBottomSheet(context: context, 
+            showModalBottomSheet(context: context,
+              isScrollControlled: true,
               builder: (context) {
                 return Container(
-                  
+                  padding: MediaQuery.of(context).viewInsets,
+                  margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                  height: 300,
+                  width: MediaQuery.of(context).size.width - 225,
+                  color: Color.fromARGB(255, 240, 240, 240),
+                  child: Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.bottomLeft,
+                        padding: MediaQuery.of(context).viewInsets,
+                        margin: EdgeInsets.all(4.5),
+                        child: Text("Group",
+                          style: TextStyle(
+                            fontSize: 17
+                          ),  
+                        ),
+                      ),
+                      Container(
+                        color: Colors.white,
+                        child: const Expanded(
+                          child: TextField(
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.zero,
+                              )
+                            ),
+                          ),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(top:5),
+                            width: 30,
+                            height: 30,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.black)
+                            ),
+                            child:
+                              Container(
+                                margin: EdgeInsets.all(2.5),
+                                decoration: const BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage('assets/images/others/ok.png'),
+                                  ),
+                                ),
+                              )
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(top:5, left: 5),
+                            width: 30,
+                            height: 30,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.black)
+                            ),
+                            child:
+                              Container(
+                                margin: EdgeInsets.all(2.5),
+                                decoration: const BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage('assets/images/others/cancel.png'),
+                                  ),
+                                ),
+                              )
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
                 );
               } 
             );
           },
-          child: Icon(
+          child: const Icon(
             Icons.add,
             size: 30,
           ),

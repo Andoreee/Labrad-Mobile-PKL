@@ -511,7 +511,7 @@ class Akses extends StatelessWidget {
                   decoration: const BoxDecoration(
                     image : DecorationImage(
                     image: AssetImage('assets/images/menu/akses/Database.png'),
-                    fit: BoxFit.fitWidth
+                    fit: BoxFit.fitHeight
                 ),
             )
                 )
