@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:labrad_pkl2022/laboratorium/group/index.dart';
 import '../nav_drawer.dart';
 
 class Laboratorium extends StatelessWidget {
@@ -61,43 +62,61 @@ class Laboratorium extends StatelessWidget {
                     Positioned(
                   top: 0,
                   left: 0,
-                  child: Container(
-                  width: 160,
-                  height: 135,
-                  decoration: const BoxDecoration(
-                    borderRadius : BorderRadius.only(
-                      topLeft: Radius.circular(8),
-                      topRight: Radius.circular(8),
-                      bottomLeft: Radius.circular(8),
-                      bottomRight: Radius.circular(8),
-                    ),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(
+                          context, GroupLaboratorium.routeName);
+                    },
+                    child: Container(
+                    width: 160,
+                    height: 135,
+                    decoration: const BoxDecoration(
+                      borderRadius : BorderRadius.only(
+                        topLeft: Radius.circular(8),
+                        topRight: Radius.circular(8),
+                        bottomLeft: Radius.circular(8),
+                        bottomRight: Radius.circular(8),
+                      ),
                 color : Color.fromRGBO(225, 236, 247, 1),
             )
-                )
+                ),
+                  )
                 ),Positioned(
                   top: 17,
                   left: 35,
-                  child: Container(
-                  width: 90,
-                  height: 90,
-                  decoration: const BoxDecoration(
-                    image : DecorationImage(
-                    image: AssetImage('assets/images/menu/lab/group.png'),
-                    fit: BoxFit.fitWidth
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(
+                          context, GroupLaboratorium.routeName);
+                    },
+                    child: Container(
+                    width: 90,
+                    height: 90,
+                    decoration: const BoxDecoration(
+                      image : DecorationImage(
+                      image: AssetImage('assets/images/menu/lab/group.png'),
+                      fit: BoxFit.fitWidth
                 ),
             )
-                )
-                ),const Positioned(
+                ),
+                  )
+                ),Positioned(
                   top: 107,
                   left: 50,
-                  child: Text('Group', textAlign: TextAlign.left, style: TextStyle(
-                  color: Color.fromRGBO(0, 0, 0, 1),
-                  fontFamily: 'IM FELL English',
-                  fontSize: 22,
-                  letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
-                  fontWeight: FontWeight.normal,
-                  height: 1
-                ),)
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(
+                          context, GroupLaboratorium.routeName);
+                    },
+                    child: const Text('Group', textAlign: TextAlign.left, style: TextStyle(
+                    color: Color.fromRGBO(0, 0, 0, 1),
+                    fontFamily: 'IM FELL English',
+                    fontSize: 22,
+                    letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
+                    fontWeight: FontWeight.normal,
+                    height: 1
+                ),),
+                  )
                 ),
                   ]
                 )

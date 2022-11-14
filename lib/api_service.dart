@@ -3,15 +3,29 @@ import 'package:labrad_pkl2022/model.dart';
 
 class ApiService {
 
-  final String baseUrl = "http://127.0.0.1:8000/";
+  final String baseUrl = "http://api.bengkelrobot.net:8001";
   Client client = Client();
 
-  Future<List<EkgGroup>?> getEkgGroups() async {
-    final response = await client.get("$baseUrl/api/ekg/group");
-    if (response.statusCode == 1500) {
-      return EkgGroupFromJson(response.body);
+  Future<List<Profile>?> getProfiles() async {
+    final response = await client.get("$baseUrl/api/profile");
+    if (response.statusCode == 200) {
+      return profileFromJson(response.body);
     } else {
       return null;
     }
   }
+  Future<bool> createProfile(Profile data) async {
+  final response = await client.post(
+    "$baseUrl/api/profile",
+    headers: {"content-type": "application/json"},
+    body: profileToJson(data),
+  );
+  if (response.statusCode == 201) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
+}
+

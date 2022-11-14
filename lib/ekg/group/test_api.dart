@@ -1,95 +1,61 @@
 import 'package:flutter/material.dart';
-import 'package:labrad_pkl2022/api_service.dart';
-import 'package:labrad_pkl2022/model.dart';
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
-class HomeScreen extends StatefulWidget {
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
+class BelajarGetData extends StatelessWidget {
   static const String routeName = "/ekg/api";
+  final String apiUrl = "https://mediksoft.com/pkl/api/rad/group";
 
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  late ApiService apiService;
-
-  @override
-  void initState() {
-    super.initState();
-    apiService = ApiService();
+  const BelajarGetData({super.key});
+  Future<List<dynamic>> _fecthDataUsers() async {
+    var result = await http.get(apiUrl);
+    return json.decode(result.body)['Rad'];
   }
-
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: FutureBuilder(
-        future: apiService.getEkgGroups(),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Belajar GET HTTP'),
+      ),
+      body: FutureBuilder<List<dynamic>>(
+        future: _fecthDataUsers(),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if (snapshot.hasError) {
-            return Center(
-              child: Text(
-                  "Something wrong with message: ${snapshot.error.toString()}"),
-            );
-          } else if (snapshot.connectionState == ConnectionState.done) {
-            List<EkgGroup> group = snapshot.data;
-            return _buildListView(group);
+          if (snapshot.hasData) {
+            return dataBody(snapshot.data);
           } else {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),
     );
   }
-
-  Widget _buildListView(List<EkgGroup> group) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-      child: ListView.builder(
-        itemBuilder: (context, index) {
-          EkgGroup ekgGroup = group[index];
-          return Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Card(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      ekgGroup.grup,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        FloatingActionButton(
-                          onPressed: () {
-                            // TODO: do something in here
-                          },
-                          child: Text(
-                            "Delete",
-                            style: TextStyle(color: Colors.red),
-                          ),
-                        ),
-                        FloatingActionButton(
-                          onPressed: () {
-                            // TODO: do something in here
-                          },
-                          child: Text(
-                            "Edit",
-                            style: TextStyle(color: Colors.blue),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          );
-        },
-        itemCount: group.length,
-      ),
+  SingleChildScrollView dataBody(List<dynamic> EkgGroup){
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: DataTable(
+          sortColumnIndex: 0,
+          showCheckboxColumn: false,
+          columns: const [
+                      DataColumn(label: Text(
+                        'Group'
+                      ))
+                    ], 
+          rows: EkgGroup
+              .map(
+                (group) => DataRow(
+                onSelectChanged: (b) {
+                  print(group["grup"]);
+                },
+                cells: [
+                  DataCell(
+                      Text(group["grup"])
+                  ),
+                ]),
+          )
+              .toList(),
+        ),
     );
   }
-}
+  }
+

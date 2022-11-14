@@ -1,33 +1,35 @@
 import 'dart:convert';
 
-class EkgGroup {
+class Profile {
   int id;
-  String grup;
+  String name;
+  String email;
+  int age;
 
-  EkgGroup({this.id = 0, required this.grup});
+  Profile({this.id = 0, required this.name,required this.email,required this.age});
 
-  factory EkgGroup.fromJson(Map<String, dynamic> map) {
-    return EkgGroup(
-        id: map["id"], grup: map["grup"]);
+  factory Profile.fromJson(Map<String, dynamic> map) {
+    return Profile(
+        id: map["id"], name: map["name"], email: map["email"], age: map["age"]);
   }
 
   Map<String, dynamic> toJson() {
-    return {"id": id, "grup": grup};
+    return {"id": id, "name": name, "email": email, "age": age};
   }
 
   @override
   String toString() {
-    return 'EkgGroup{id: $id, grup: $grup}';
+    return 'Profile{id: $id, name: $name, email: $email, age: $age}';
   }
 
 }
 
-List<EkgGroup> EkgGroupFromJson(String jsonData) {
+List<Profile> profileFromJson(String jsonData) {
   final data = json.decode(jsonData);
-  return List<EkgGroup>.from(data.map((item) => EkgGroup.fromJson(item)));
+  return List<Profile>.from(data.map((item) => Profile.fromJson(item)));
 }
 
-String EkgGroupToJson(EkgGroup data) {
+String profileToJson(Profile data) {
   final jsonData = data.toJson();
   return json.encode(jsonData);
 }
